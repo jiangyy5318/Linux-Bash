@@ -1,0 +1,24 @@
++ curr=
++ cd /usr/local/spark-2.0.0-bin-hadoop2.7
++ sbin/stop-master.sh
+stopping org.apache.spark.deploy.master.Master
++ for var in '$@'
++ ssh slave01 'cd /usr/local/spark-2.0.0-bin-hadoop2.7;sbin/stop-slaves.sh'
+slave01: no org.apache.spark.deploy.worker.Worker to stop
+master: stopping org.apache.spark.deploy.worker.Worker
++ cd /usr/local/hadoop-2.7.1
++ sbin/stop-yarn.sh
+stopping yarn daemons
+stopping resourcemanager
+master: stopping nodemanager
+slave01: stopping nodemanager
+no proxyserver to stop
++ sbin/stop-dfs.sh
+16/10/14 21:44:00 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Stopping namenodes on [master]
+master: stopping namenode
+master: stopping datanode
+slave01: stopping datanode
+Stopping secondary namenodes [0.0.0.0]
+0.0.0.0: stopping secondarynamenode
+16/10/14 21:44:32 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable

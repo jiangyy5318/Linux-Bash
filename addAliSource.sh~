@@ -1,0 +1,12 @@
+#!/bin/bash
+
+set -x
+set -e
+
+sudo cp /etc/apt/sources.list  /etc/apt/sources.list.bak
+
+sudo tee -a /etc/apt/source.list << 'EOF'
+
+
+EOF
+sudo apt-get update
